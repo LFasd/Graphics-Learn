@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="80e84260-0bb6-4f5d-b4a1-51dc56f1d165" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Shaders/NewUnlitShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Ambient.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Lambert.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Gradient Ambient.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Half Lambert.shader" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1h00AqmMobx3wJdMYCvScxRfKAq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="80e84260-0bb6-4f5d-b4a1-51dc56f1d165" name="Default Changelist" comment="" />
+      <created>1599132570629</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599132570629</updated>
+      <workItem from="1599132578072" duration="6936000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1854" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599200510770">
+      <screen x="1440" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1854" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860/1440.0.1920.1040@1440.0.1920.1040" timestamp="1599200510770" />
+    <state x="1901" y="164" key="SettingsEditor" timestamp="1599200865216">
+      <screen x="1440" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1901" y="164" key="SettingsEditor/0.0.1440.860/1440.0.1920.1040@1440.0.1920.1040" timestamp="1599200865216" />
+  </component>
+</project>
