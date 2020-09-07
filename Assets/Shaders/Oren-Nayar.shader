@@ -19,6 +19,7 @@
             #pragma fragment frag
 
             #include "UnityCG.cginc"
+            #include "Lighting.cginc"
 
             struct a2v
             {
@@ -73,7 +74,7 @@
 
                 fixed3 light = max(0, normalDotLight) * (A + (B * lightPDotViewP * sin(alpha) * tan(beta)));
 
-                return fixed4(light * _Color.rgb, 1.0);
+                return fixed4(light * _Color.rgb * _LightColor0.rgb, 1.0);
             }
             ENDCG
         }

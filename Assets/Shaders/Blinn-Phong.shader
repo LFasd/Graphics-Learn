@@ -1,11 +1,13 @@
-﻿Shader "Light/Base Lambert"
+﻿Shader "Light/Blinn-Phong"
 {
     Properties
     {
         _Color ("MainColor", Color) = (1,1,1,1)
+        _Specular ("Specular Color", Color) = (1,1,1,1)
+        _Gloss ("Gloss", Range(0, 256)) = 1
 
-        // 是否接收环境光
         [Toggle(_AMBIENT)] _Ambient ("Ambient", Float) = 0
+        [Toggle(_DIFFUSE)] _Diffuse ("Diffuse", Float) = 0
     }
     SubShader
     {
@@ -17,8 +19,6 @@
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
-
 
             #include "UnityCG.cginc"
             #include "Lighting.cginc"
@@ -33,16 +33,21 @@
             {
                 float4 vertex : SV_POSITION;
                 float3 worldNormal : TEXCOORD0;
+                float3 worldPos : TEXCOORD1;
             };
 
             fixed4 _Color;
+            fixed4 _Specular;
+            float _Gloss;
             float _Ambient;
+            float _Diffuse;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.worldNormal = mul(v.normal, (float3x3)unity_WorldToObject);
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
                 return o;
             }
 
@@ -50,13 +55,17 @@
             {
                 fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * _Ambient;
 
-                // 由于每一个片元传入的数据都是插值产生的，因此传入的法向量无法保证是单位向量，需要先归一成单位向量
-                fixed3 normal = normalize(i.worldNormal);
-                fixed3 worldLightDir = normalize(_WorldSpaceLightPos0.xyz);
+                float3 normal = normalize(i.worldNormal);
+                float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
+                float3 viewDir = normalize(_WorldSpaceCameraPos.xyz - i.worldPos);
 
-                fixed3 diffuse = _LightColor0.rgb * _Color.rgb * saturate(dot(worldLightDir, normal));
+                fixed3 diffuse = _Color.rgb * _LightColor0.rgb * saturate(dot(normal, lightDir)) * _Diffuse;
 
-                return fixed4(ambient + diffuse, 1.0);
+                float3 hlafDir = normalize(viewDir + lightDir);
+
+                fixed3 specular = _Specular.rgb * _LightColor0.rgb * pow(saturate(dot(hlafDir, normal)), _Gloss);
+
+                return fixed4(ambient + diffuse + specular, 1.0);
             }
             ENDCG
         }
