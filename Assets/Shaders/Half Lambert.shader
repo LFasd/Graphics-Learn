@@ -3,9 +3,7 @@
     Properties
     {
         _Color ("MainColor", Color) = (1,1,1,1)
-
-        // 是否是半兰伯特光照
-        [Toggle(_HALF)] _Half ("Half Aambert", Float) = 0
+		//_Factor ("Factor", Range(0.5, 1)) = 0.5
     }
     SubShader
     {
@@ -34,7 +32,7 @@
             };
 
             fixed4 _Color;
-            float _Ambient;
+			float _Factor;
 
             v2f vert (appdata v)
             {
@@ -46,17 +44,17 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * _Ambient;
-
                 // 由于每一个片元传入的数据都是插值产生的，因此传入的法向量无法保证是单位向量，需要先归一成单位向量
                 fixed3 normal = normalize(i.worldNormal);
                 fixed3 worldLightDir = normalize(_WorldSpaceLightPos0.xyz);
 
                 fixed3 diffuse = _LightColor0.rgb * _Color.rgb * saturate(dot(worldLightDir, normal));
 
-                // fixed3 half_lambert = diffuse * 0.5 + 0.5;
+                //fixed3 half_lambert = diffuse * _Factor + 1 - _Factor;
 
-                return fixed4(ambient + diffuse, 1.0);
+				fixed3 half_lambert = diffuse * 0.5 + 0.5;
+
+                return fixed4(half_lambert, 1.0);
             }
             ENDCG
         }
