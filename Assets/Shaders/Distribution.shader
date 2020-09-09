@@ -87,7 +87,7 @@ Shader "Light/Distribution"
                 float3 lightDir = normalize(i.lightDir);
 
                 fixed4 packedNormal = tex2D(_BumpMap, i.uv.zw);
-                fixed3 normal = UnpackNormal(packedNormal);
+                fixed3 normal = normalize(UnpackNormal(packedNormal));
 
                 float3 h = normalize(eyeDir+lightDir);
                 float nh = saturate(dot(normal, h));
