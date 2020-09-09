@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Distribution
+  m_Name: Beckmann Distribution 1
   m_Shader: {fileID: 4800000, guid: 7b128b30c303e59408fff9f01bae153d, type: 3}
   m_ShaderKeywords: _GGX
   m_LightmapFlags: 4
@@ -84,7 +84,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Roughness: 0.109
+    - _Roughness: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

@@ -1,4 +1,4 @@
-Shader "Light/Distribution"
+Shader "Light/Beckmann Distribution"
 {
     Properties
     {
@@ -15,7 +15,6 @@ Shader "Light/Distribution"
     
     SubShader
     {
-
         Pass
         {
             Tags { "LightMode" = "ForwardBase"}
@@ -74,6 +73,12 @@ Shader "Light/Distribution"
                 return o;
             }
 
+
+            float chiGGX(float v)
+            {
+                return v > 0 ? 1 : 0;
+            }
+
             fixed4 frag (v2f i) : COLOR
             {
                 //将法线转到世界空间:乘以变换矩阵的逆的转置
@@ -90,9 +95,7 @@ Shader "Light/Distribution"
                 fixed3 normal = normalize(UnpackNormal(packedNormal));
 
                 float3 h = normalize(eyeDir+lightDir);
-                float nh = saturate(dot(normal, h));
-                float nv = saturate(dot(normal, eyeDir));                
-                float vh = saturate(dot(eyeDir, h));
+                float nh = saturate(dot(normal, h));          
                 float nh2 = nh*nh;
 
 
@@ -105,12 +108,12 @@ Shader "Light/Distribution"
                 // Trowbridge-Reitz GGX Distribution
                 float a2 = _Roughness * _Roughness;
                 float denom = (nh2 * (a2 - 1) + 1);
-                float ggx = a2 / (3.14159*denom*denom);
+                float ggx = a2 * chiGGX(nh) / (3.14159*denom*denom);
 
 
                 float d = beckmann * _Beckmann + ggx * _GGX;
 
-                return float4(d * _Color.rgb,1);
+                return float4(d * _Color.rgb * _LightColor0.rgb,1);
             }
             ENDCG
         }

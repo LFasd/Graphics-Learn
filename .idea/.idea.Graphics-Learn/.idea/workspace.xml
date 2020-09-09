@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c1a9290-8440-4fcc-bcce-057baf635f4a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Base Lambert.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Base Lambert.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Oren-Nayar.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Oren-Nayar.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Graphics-Learn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graphics-Learn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Base Lambert Drone.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Base Lambert Drone.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Distribution.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Distribution.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lambert.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lambert.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Lambert.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Lambert.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Oren-Nayar.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Oren-Nayar.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Phong.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Phong.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Phong.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Phong.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Distribution.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Distribution.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Lambert Texture.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Lambert Texture.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Silver_Normal.tif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Silver_Normal.tif.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/无人侦察机/Drone.tbscene" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/无人侦察机/Drone.tbscene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/无人侦察机/无人侦察机.max" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/无人侦察机/无人侦察机.max.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599480886138</updated>
       <workItem from="1599480893503" duration="1425000" />
+      <workItem from="1599655493867" duration="2043000" />
     </task>
     <servers />
   </component>
