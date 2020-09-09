@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80e84260-0bb6-4f5d-b4a1-51dc56f1d165" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cook-Torrance.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Cook-Torrance.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lambert.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lambert.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Half Lambert.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Half Lambert.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +25,9 @@
         <option value="$PROJECT_DIR$/Assets/Shaders/Gradient Ambient.shader" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Half Lambert.shader" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Oren-Nayar.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/My Cook-Torrance.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Distribution.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Lambert 1.shader" />
       </list>
     </option>
   </component>
@@ -47,7 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599132570629</updated>
       <workItem from="1599132578072" duration="6939000" />
-      <workItem from="1599450367109" duration="4299000" />
+      <workItem from="1599450367109" duration="9710000" />
     </task>
     <servers />
   </component>
