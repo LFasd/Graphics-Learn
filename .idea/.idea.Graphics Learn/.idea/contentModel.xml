@@ -3,8 +3,39 @@
   <component name="ContentModelStore">
     <e p="C:\Users\admin\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\admin\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Graphics Learn.1541275918.00" t="ExcludeRecursive" />
-    <e p="F:\Graphics Learn" t="IncludeFlat">
+    <e p="F:\Graphics Learn" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Rotation.cs" t="Include" />
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="Base Ambient.shader" t="Include" />
+          <e p="Beckmann Distribution.shader" t="Include" />
+          <e p="Blinn-Phong.shader" t="Include" />
+          <e p="Cook-Torrance Texture.shader" t="Include" />
+          <e p="Cook-Torrance.shader" t="Include" />
+          <e p="Fresnel-Schlick.shader" t="Include" />
+          <e p="Geometry.shader" t="Include" />
+          <e p="Gradient Ambient.shader" t="Include" />
+          <e p="Half Lambert.shader" t="Include" />
+          <e p="Lambert Texture.shader" t="Include" />
+          <e p="Lambert.shader" t="Include" />
+          <e p="My Cook-Torrance.shader" t="Include" />
+          <e p="My Cook-Torrance2.shader" t="Include" />
+          <e p="myPBR.cginc" t="Include" />
+          <e p="myPBR.shader" t="Include" />
+          <e p="Oren-Nayar.shader" t="Include" />
+          <e p="PBR.shader" t="Include" />
+          <e p="Phong Texture.shader" t="Include" />
+          <e p="Phong.shader" t="Include" />
+          <e p="Ward.shader" t="Include" />
+        </e>
+      </e>
       <e p="Graphics Learn.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

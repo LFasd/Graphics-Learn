@@ -10,8 +10,6 @@ Shader "Light/Fresnel-Schlick"
         _FresnelBase("FresnelBase", Range(0, 1)) = 1
         _FresnelIndensity("FresnelIndensity", Float) = 5
 
-        // [Toggle(_GGX)] _GGX ("GGX", Float) = 0
-        // [Toggle(_BECKMANN)] _Beckmann ("Beckmann", Float) = 0
     }
 
     
@@ -36,9 +34,6 @@ Shader "Light/Fresnel-Schlick"
             float4 _MainTex_ST;
             sampler2D _BumpMap;
             float4 _BumpMap_ST;
-
-            // float _GGX;
-            // float _Beckmann;
 
             struct a2v {
                 float4 vertex : POSITION;
@@ -82,7 +77,7 @@ Shader "Light/Fresnel-Schlick"
                 fixed4 packedNormal = tex2D(_BumpMap, i.uv.zw);
                 fixed3 normal = normalize(UnpackNormal(packedNormal));
 
-                float f = _FresnelBase + (1-_FresnelBase) * pow((1-(dot(normal, viewDir))), _FresnelIndensity);
+                float3 f = _FresnelBase + (1-_FresnelBase) * pow((1-(dot(normal, viewDir))), 5);
 
                 return float4(f * _Color.rgb * _LightColor0.rgb,1);
             }

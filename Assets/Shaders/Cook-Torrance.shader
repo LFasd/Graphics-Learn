@@ -94,35 +94,32 @@ Shader "Light/Cook-Torrance"
                 float s;
                 float ln = saturate(dot(lightDir,normalWorld));
 
-                if(ln > 0.0)//在光照范围内
-                {
-                    float3 h = normalize(eyeDir+lightDir);
-                    float nh = saturate(dot(normalWorld, h));
-                    float nv = saturate(dot(normalWorld, eyeDir));                
-                    float vh = saturate(dot(eyeDir, h));
-                    
-                    //G项
-                    float nh2 = 2.0*nh;
-                    float g1 = (nh2*nv)/vh;
-                    float g2 = (nh2*ln)/vh;
-                    float g = min(1.0,min(g1,g2));
-
-                    //D项：beckmann distribution function
-                    float m2 = _Roughness*_Roughness;
-                    float r1 = 1.0/(4.0 * m2 *pow(nh,4.0));
-                    float r2 = (nh*nh -1.0)/(m2 * nh*nh);
-                    float roughness = r1*exp(r2);
-
-                    //F项
-                    float fresnel = pow(1.0 - vh,5.0);
-                    fresnel *= (1.0-_Fresnel);
-                    fresnel += _Fresnel;
-                    s = saturate((fresnel*g*roughness)/(nv*ln*3.14));
-
-                    //reflectiveColor *= fresnel;
-                }
+                float3 h = normalize(eyeDir+lightDir);
+                float nh = saturate(dot(normalWorld, h));
+                float nv = saturate(dot(normalWorld, eyeDir));                
+                float vh = saturate(dot(eyeDir, h));
                 
-                float3 final =_LightColor0*ln*(_K*diffuse*reflectiveColor*2 + s*(1-_K)*reflectiveColor*2) + UNITY_LIGHTMODEL_AMBIENT.xyz;
+                //G项
+                float nh2 = 2.0*nh;
+                float g1 = (nh2*nv)/vh;
+                float g2 = (nh2*ln)/vh;
+                float g = min(1.0,min(g1,g2));
+
+                //D项：beckmann distribution function
+                float m2 = _Roughness*_Roughness;
+                float r1 = 1.0/(4.0 * m2 *pow(nh,4.0));
+                float r2 = (nh*nh -1.0)/(m2 * nh*nh);
+                float roughness = r1*exp(r2);
+
+                //F项
+                float fresnel = pow(1.0 - vh,5.0);
+                fresnel *= (1.0-_Fresnel);
+                fresnel += _Fresnel;
+                s = saturate((fresnel*g*roughness)/(nv*ln*3.14));
+
+                //reflectiveColor *= fresnel;
+                
+                float3 final =_LightColor0*ln*(_K*diffuse*reflectiveColor*2 + s*(1-_K)*reflectiveColor*2);
                 return float4(final,1);
             }
             ENDCG

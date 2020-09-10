@@ -1,4 +1,4 @@
-Shader "Light/Beckmann Distribution"
+Shader "Light/Geometry"
 {
     Properties
     {
@@ -7,9 +7,6 @@ Shader "Light/Beckmann Distribution"
         _BumpMap ("Normal", 2D) = "white" {}
 
         _Roughness("Roughness",Range(0,1)) = 1
-
-        [Toggle(_GGX)] _GGX ("GGX", Float) = 0
-        [Toggle(_BECKMANN)] _Beckmann ("Beckmann", Float) = 0
     }
 
     
@@ -27,11 +24,7 @@ Shader "Light/Beckmann Distribution"
 
             float4 _Color;
 
-
             float _Roughness;
-
-            float _GGX;
-            float _Beckmann;
 
             struct a2v {
                 float4 vertex : POSITION;
@@ -63,10 +56,6 @@ Shader "Light/Beckmann Distribution"
                 float3 binormal = cross(normalize(v.normal), normalize(v.tangent.xyz)) * v.tangent.w;
                 float3x3 rotation = float3x3(v.tangent.xyz, binormal, v.normal);
 
-                // o.posWorld = mul(unity_ObjectToWorld, v.vertex);
-                // o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
-                // o.worldNormal = mul(v.normal,unity_WorldToObject);
-
                 o.lightDir = mul(rotation, ObjSpaceLightDir(v.vertex)).xyz;
                 o.viewDir = mul(rotation, ObjSpaceViewDir(v.vertex)).xyz;
 
@@ -74,49 +63,30 @@ Shader "Light/Beckmann Distribution"
             }
 
 
-            float chiGGX(float v)
-            {
-                return v > 0 ? 1 : 0;
-            }
-
             fixed4 frag (v2f i) : COLOR
             {
-                //将法线转到世界空间:乘以变换矩阵的逆的转置
-                //float3 normalWorld  = mul(_Object2World,i.normal);
-//                float3 normalWorld  = normalize(i.worldNormal);
-
-                //观察者
-                float3 eyeDir = normalize(i.viewDir);
-
-                //光源
+                float3 viewDir = normalize(i.viewDir);
                 float3 lightDir = normalize(i.lightDir);
 
                 fixed4 packedNormal = tex2D(_BumpMap, i.uv.zw);
                 fixed3 normal = normalize(UnpackNormal(packedNormal));
 
-                float3 h = normalize(eyeDir+lightDir);
-                float nh = saturate(dot(normal, h));          
-                float nh2 = nh*nh;
+                float k = (_Roughness + 1) * (_Roughness + 1) / 8;
 
-                float a = _Roughness;
-                a = max(a, 0.002);
-
-
-                // Beckmann Distribution
-                float m2 = a*a;
-                float r1 = 1.0/(4.0 * m2 *pow(nh,4.0));
-                float r2 = (nh2 -1.0)/(m2 * nh2);
-                float beckmann = r1*exp(r2);
+                float nv = saturate(dot(normal, viewDir));
+                float g1 = nv / (nv * (1 - k) + k);
                 
-                // Trowbridge-Reitz GGX Distribution
-                float a2 = a * a;
-                float denom = (nh2 * (a2 - 1) + 1);
-                float ggx = a2 * chiGGX(nh) / (3.14159*denom*denom + 0.00001);
+                float nl = saturate(dot(normal, lightDir));
+                float g2 = nl / (nl * (1 - k) + k);
+                
+                float g = g1 * g2;
 
+                // half a = _Roughness;
+                // half lambdaV = nl * (nl * (1 - a) + a);
+                // half lambdaL = nv * (nv * (1 - a) + a);
+                // g =  0.5f / (lambdaV + lambdaL + 1e-5f);
 
-                float d = beckmann * _Beckmann + ggx * _GGX;
-
-                return float4(d * _Color.rgb * _LightColor0.rgb,1);
+                return float4(g * _Color.rgb * _LightColor0.rgb * nl,1);
             }
             ENDCG
         }

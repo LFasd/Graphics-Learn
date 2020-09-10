@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80e84260-0bb6-4f5d-b4a1-51dc56f1d165" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Base Lambert Drone.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Base Lambert Drone.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Beckmann Distribution 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Beckmann Distribution 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Beckmann Distribution.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Beckmann Distribution.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/Cook-Torrance.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Cook-Torrance.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cook-Torrance.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Cook-Torrance.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Fresnel-Schlick.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Fresnel-Schlick.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Cook-Torrance.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Cook-Torrance.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lambert.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lambert.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Beckmann Distribution.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Beckmann Distribution.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Cook-Torrance.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Cook-Torrance.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Cook-Torrance.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Cook-Torrance.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Fresnel-Schlick.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Fresnel-Schlick.shader" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rotation.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -28,6 +42,9 @@
         <option value="$PROJECT_DIR$/Assets/Shaders/My Cook-Torrance.shader" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Distribution.shader" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Lambert 1.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Cook-Torrance.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/PBR.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rotation.cs" />
       </list>
     </option>
   </component>
@@ -42,6 +59,26 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599132570629</updated>
       <workItem from="1599132578072" duration="6939000" />
-      <workItem from="1599450367109" duration="9710000" />
+      <workItem from="1599450367109" duration="16709000" />
     </task>
     <servers />
   </component>
