@@ -60,10 +60,6 @@ Shader "Light/Fresnel-Schlick"
                 float3 binormal = cross(normalize(v.normal), normalize(v.tangent.xyz)) * v.tangent.w;
                 float3x3 rotation = float3x3(v.tangent.xyz, binormal, v.normal);
 
-                // o.posWorld = mul(unity_ObjectToWorld, v.vertex);
-                // o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
-                // o.worldNormal = mul(v.normal,unity_WorldToObject);
-
                 o.lightDir = mul(rotation, ObjSpaceLightDir(v.vertex)).xyz;
                 o.viewDir = mul(rotation, ObjSpaceViewDir(v.vertex)).xyz;
 
@@ -73,11 +69,14 @@ Shader "Light/Fresnel-Schlick"
             fixed4 frag (v2f i) : COLOR
             {
                 float3 viewDir = normalize(i.viewDir);
+                float3 lightDir = normalize(i.lightDir);
 
                 fixed4 packedNormal = tex2D(_BumpMap, i.uv.zw);
                 fixed3 normal = normalize(UnpackNormal(packedNormal));
 
-                float3 f = _FresnelBase + (1-_FresnelBase) * pow((1-(dot(normal, viewDir))), 5);
+                float h = normalize(viewDir + lightDir);
+
+                float3 f = _FresnelBase + (1-_FresnelBase) * pow((1-(dot(normal, viewDir))), _FresnelIndensity);
 
                 return float4(f * _Color.rgb * _LightColor0.rgb,1);
             }

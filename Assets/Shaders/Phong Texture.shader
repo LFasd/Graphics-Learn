@@ -86,13 +86,13 @@
 				fixed3 tangentNormal;
 
                 fixed3 normal = normalize(UnpackNormal(packedNormal));
-                normal = normal * _NormalMap + (1 - _NormalMap) * normalize(i.worldNormal);
-
                 fixed3 lightDir = normalize(i.lightDir);
-                lightDir = lightDir * _NormalMap + (1 - _NormalMap) * normalize(_WorldSpaceLightPos0.xyz);
-
                 float3 viewDir = normalize(i.viewDir);
-                viewDir = viewDir * _NormalMap + (1 - _NormalMap) * normalize(_WorldSpaceCameraPos.xyz - i.worldPos);
+
+                // 对法线，等光方向，视线方向进行插值（开启法线贴图为法线空间，不开启为世界空间）
+                normal = lerp(normalize(i.worldNormal), normal, _NormalMap);
+                lightDir = lerp(normalize(_WorldSpaceLightPos0.xyz), lightDir, _NormalMap);
+                viewDir = lerp(normalize(_WorldSpaceCameraPos.xyz - i.worldPos), viewDir, _NormalMap);
 
                 fixed3 diffuse = _Color.rgb * _LightColor0.rgb * saturate(dot(normal, lightDir)) * _Diffuse;
 

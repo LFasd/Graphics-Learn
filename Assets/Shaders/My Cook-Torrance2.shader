@@ -11,7 +11,6 @@ Shader "Light/My Cook-Torrance2"
         _BumpMap ("Normal", 2D) = "white" {}
 
         _Roughness("Roughness",Range(0,1)) = 1
-        _FresnelBase("FresnelBase", Range(0, 1)) = 1
         _Metallic("Metallic", Range(0, 1)) = 1
     }
 
@@ -86,22 +85,27 @@ Shader "Light/My Cook-Torrance2"
                 return g;
             }
 
+            float chiGGX(float v)
+            {
+                return v > 0 ? 1 : 0;
+            }
+
             float D(float3 n, float3 h)
             {
                 float nh = saturate(dot(n, h));
+                float nh2 = nh*nh;
+                float a = _Roughness;
 
-                float nh2 = nh * nh;
-                float m2 = _Roughness*_Roughness;
-                float r1 = 1.0/(4.0 * m2 *pow(nh,4.0));
-                float r2 = (nh2 -1.0)/(m2 * nh2);
-                float beckmann = r1*exp(r2);
+                float a2 = a * a;
+                float denom = (nh2 * (a2 - 1) + 1);
+                float d = a2 * chiGGX(nh) / (3.14159*denom*denom + 0.00001);
 
-                return beckmann;
+                return d;
             }
 
-            float F(float3 n, float3 v)
+            float F(float3 n, float3 v, float3 f0)
             {
-                float f = _FresnelBase + (1 - _FresnelBase) * pow((1 - (dot(n, v))), 5);
+                float f = f0 + (1 - f0) * pow((1 - (dot(n, v))), 5);
                 return f;
             }
 
@@ -119,16 +123,19 @@ Shader "Light/My Cook-Torrance2"
                 float nl = saturate(dot(normal, lightDir));
                 float nv = saturate(dot(normal, viewDir));
 
+                float3 f0 = lerp(0.04, col.rgb, _Metallic);
+
 
                 ///计算漫反射
                 float3 diffuse = _Color.rgb * nl * col.rgb * _LightColor0.rgb;
 
                 float denominator = 4 * nv * nl + 0.001;
-                float specular = D(normal, h) * G(normal, viewDir, lightDir) * F(normal, viewDir) / denominator;
+                float specular = D(normal, h) * G(normal, viewDir, lightDir) * F(normal, viewDir, f0) / denominator;
 
-                float kd = 1 - _Metallic;
+                float3 ks = f0;
+                float3 kd = (1 - ks) * (1 - _Metallic);
                 
-                float3 final = diffuse * kd + specular;
+                float3 final = diffuse * kd + specular * col.rgb * _LightColor0.rgb;
                 return float4(final,1);
             }
             ENDCG

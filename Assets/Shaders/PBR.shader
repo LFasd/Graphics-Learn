@@ -92,7 +92,7 @@ Shader "Light/PBR"
                 float nv = saturate(dot(n, v));
                 float nl = saturate(dot(n, l));
 
-                float k = (a + 1) * (a + 1) / 8;
+                float k = (a + 1) * (a + 1) / 8.0;
 
                 float g1 = nv / (nv * (1 - k) + k);
                 float g2 = nl / (nl * (1 - k) + k);
@@ -112,11 +112,6 @@ Shader "Light/PBR"
                 float nh = saturate(dot(n, h));
                 float nh2 = nh*nh;
 
-                // float nh2 = nh * nh;
-                // float a2 = a*a;
-                // float r1 = 1.0/(4.0 * a2 *pow(nh,4.0));
-                // float r2 = (nh2 -1.0)/(a2 * nh2);
-                // float d = r1*exp(r2);
 
                 float a2 = a * a;
                 float denom = nh2 * (a2 - 1) + 1;
@@ -152,7 +147,7 @@ Shader "Light/PBR"
                 float hv = saturate(dot(h, viewDir));
 
                 float3 f0 = 0.04;
-                f0 = f0 * (1 - metallic) + col.rgb * metallic;
+                f0 = lerp(f0, col.rgb, metallic);
 
                 float d = D(normal, h, a);
                 float3 f = F(normal, viewDir, f0);
@@ -163,13 +158,14 @@ Shader "Light/PBR"
                 float3 diffuse = _Color.rgb * nl * col.rgb * _LightColor0.rgb;
 
                 float denominator = 4 * nv * nl + 0.001;
-                float specular = d * g * f / denominator;
+                // float specular = d * g * f / denominator;
+                float specular = d * g * f;
 
-                float3 ks = f;
+                float3 ks = f0;
                 float3 kd = (1 - ks) * (1 - metallic);
                 
-                float3 final = diffuse * kd + specular * hl;
-                return float4(kd * diffuse + d * f * g * _LightColor0.rgb,1);
+                float3 final = diffuse * kd + specular * _LightColor0.rgb;
+                return float4(final,1);
             }
             ENDCG
         }
