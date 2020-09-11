@@ -2,22 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80e84260-0bb6-4f5d-b4a1-51dc56f1d165" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Graphics Learn/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/Base Lambert Drone.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Base Lambert Drone.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Beckmann Distribution 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Beckmann Distribution 1.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/Beckmann Distribution.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Beckmann Distribution.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cook-Torrance.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Cook-Torrance.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cook-Torrance.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Cook-Torrance.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Blinn-Phong.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Blinn-Phong.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/Fresnel-Schlick.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Fresnel-Schlick.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Half Lambert.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Half Lambert.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/My Cook-Torrance2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/My Cook-Torrance2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Phong Texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Phong Texture.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Phong.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Phong.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/UnLit 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/UnLit 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ambient.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ambient.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Cook-Torrance.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Cook-Torrance.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lambert.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lambert.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Beckmann Distribution.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Beckmann Distribution.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Cook-Torrance.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Cook-Torrance.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Cook-Torrance.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Cook-Torrance.shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Fresnel-Schlick.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Fresnel-Schlick.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PBR.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PBR.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Phong.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Phong.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UnLit.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UnLit.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Half Lambert.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Half Lambert.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599132570629</updated>
       <workItem from="1599132578072" duration="6939000" />
-      <workItem from="1599450367109" duration="16709000" />
+      <workItem from="1599450367109" duration="18545000" />
     </task>
     <servers />
   </component>

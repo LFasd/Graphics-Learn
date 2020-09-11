@@ -3,7 +3,7 @@
     Properties
     {
         _Color ("MainColor", Color) = (1,1,1,1)
-		//_Factor ("Factor", Range(0.5, 1)) = 0.5
+		_Factor ("Factor", Range(0.5, 1)) = 0.5
     }
     SubShader
     {
@@ -50,9 +50,9 @@
 
                 fixed3 diffuse = _LightColor0.rgb * _Color.rgb * saturate(dot(worldLightDir, normal));
 
-                //fixed3 half_lambert = diffuse * _Factor + 1 - _Factor;
+                fixed3 half_lambert = diffuse * _Factor + 1 - _Factor;
 
-				fixed3 half_lambert = diffuse * 0.5 + 0.5;
+				// fixed3 half_lambert = diffuse * 0.5 + 0.5;
 
                 return fixed4(half_lambert, 1.0);
             }

@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Phong Texture
   m_Shader: {fileID: 4800000, guid: 1863bfedd717ed44ea9b0f29addabfe0, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _DIFFUSE _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -60,7 +60,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Diffuse: 0
+    - _Diffuse: 1
     - _DstBlend: 0
     - _Gloss: 20
     - _GlossMapScale: 1
@@ -68,7 +68,7 @@ Material:
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _NormalMap: 0
+    - _NormalMap: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
